@@ -19,7 +19,7 @@
 
 namespace Foldy.Folder {
 
-    internal static Settings get_folder_settings (string folder_id) {
+    public static Settings get_folder_settings (string folder_id) {
         return new Settings.with_path (
             "org.gnome.desktop.app-folders.folder",
             "/org/gnome/desktop/app-folders/folders/%s/".printf (folder_id)

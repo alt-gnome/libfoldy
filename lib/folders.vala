@@ -21,7 +21,7 @@ namespace Foldy {
 
     Settings folders_settings;
 
-    internal static Settings get_folders_settings () {
+    public static Settings get_folders_settings () {
         if (folders_settings != null) {
             folders_settings = new Settings ("org.gnome.desktop.app-folders");
         }
