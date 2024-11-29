@@ -29,12 +29,17 @@ namespace Foldy {
         return folders_settings;
     }
 
+    internal void sync () {
+        Settings.sync ();
+    }
+
     public static string[] get_folders () {
         return get_folders_settings ().get_strv ("folder-children");
     }
 
     public static void set_folders (string[]? new_folders) {
         get_folders_settings ().set_strv ("folder-children", new_folders);
+        sync ();
     }
 
     public static void add_folder (string folder_id) {
@@ -73,7 +78,7 @@ namespace Foldy {
         Folder.set_folder_categories (fid, categories);
         Folder.set_folder_translate (fid, translate);
 
-        Settings.sync ();
+        sync ();
     }
 
     public static bool folder_exists (string folder_id) {

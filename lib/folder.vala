@@ -34,6 +34,7 @@ namespace Foldy.Folder {
 
     public static void set_folder_name (string folder_id, string folder_name) {
         get_folder_settings (folder_id).set_string ("name", folder_name);
+        sync ();
     }
 
     // Folder categories
@@ -44,6 +45,7 @@ namespace Foldy.Folder {
 
     public static void set_folder_categories (string folder_id, string[]? folder_categories) {
         get_folder_settings (folder_id).set_strv ("categories", folder_categories);
+        sync ();
     }
 
     public static void add_folder_categories (string folder_id, string[] folder_categories) {
@@ -75,6 +77,7 @@ namespace Foldy.Folder {
 
     public static void set_folder_translate (string folder_id, bool folder_translate) {
         get_folder_settings (folder_id).set_boolean ("translate", folder_translate);
+        sync ();
     }
 
     // Folder apps
@@ -85,6 +88,7 @@ namespace Foldy.Folder {
 
     public static void set_folder_apps (string folder_id, string[]? folder_apps) {
         get_folder_settings (folder_id).set_strv ("apps", folder_apps);
+        sync ();
     }
 
     public static void add_folder_apps (string folder_id, string[] folder_apps) {
@@ -116,6 +120,7 @@ namespace Foldy.Folder {
 
     public static void set_folder_excluded_apps (string folder_id, string[]? folder_excluded_apps) {
         get_folder_settings (folder_id).set_strv ("excluded-apps", folder_excluded_apps);
+        sync ();
     }
 
     public static void add_folder_excluded_apps (string folder_id, string[] folder_excluded_apps) {
