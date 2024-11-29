@@ -51,8 +51,14 @@ namespace Foldy.Folder {
     public static void add_folder_categories (string folder_id, string[] folder_categories) {
         var builder = new StrvBuilder ();
 
-        builder.addv (get_folder_categories (folder_id));
-        builder.addv (folder_categories);
+        var current_categories = get_folder_categories (folder_id);
+
+        builder.addv (current_categories);
+        foreach (string category in folder_categories) {
+            if (!(category in current_categories)) {
+                builder.add (category);
+            }
+        }
 
         set_folder_categories (folder_id, builder.end ());
     }
@@ -94,8 +100,14 @@ namespace Foldy.Folder {
     public static void add_folder_apps (string folder_id, string[] folder_apps) {
         var builder = new StrvBuilder ();
 
-        builder.addv (get_folder_apps (folder_id));
-        builder.addv (folder_apps);
+        var current_apps = get_folder_apps (folder_id);
+
+        builder.addv (current_apps);
+        foreach (string app in folder_apps) {
+            if (!(app in current_apps)) {
+                builder.add (app);
+            }
+        }
 
         set_folder_apps (folder_id, builder.end ());
     }
@@ -126,8 +138,14 @@ namespace Foldy.Folder {
     public static void add_folder_excluded_apps (string folder_id, string[] folder_excluded_apps) {
         var builder = new StrvBuilder ();
 
-        builder.addv (get_folder_apps (folder_id));
-        builder.addv (folder_excluded_apps);
+        var current_excluded_apps = get_folder_apps (folder_id);
+
+        builder.addv (current_excluded_apps);
+        foreach (string excluded_app in folder_excluded_apps) {
+            if (!(excluded_app in current_excluded_apps)) {
+                builder.add (excluded_app);
+            }
+        }
 
         set_folder_apps (folder_id, builder.end ());
     }
