@@ -1,5 +1,2 @@
-# libvazzy
-Library for Vala with fuzzy search functions
-
-Currently, the library contains:
-- Damerau-Levenstein distance
+# libfoldy
+Library with fincs for simpler work with folder schema
