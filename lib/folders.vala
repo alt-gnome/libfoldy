@@ -45,8 +45,12 @@ namespace Foldy {
     public static void add_folder (string folder_id) {
         var builder = new StrvBuilder ();
 
-        builder.addv (get_folders ());
-        builder.add (folder_id);
+        var current_folders = get_folders ();
+
+        builder.addv (current_folders);
+        if (!(folder_id in current_folders)) {
+            builder.add (folder_id);
+        }
 
         set_folders (builder.end ());
     }
