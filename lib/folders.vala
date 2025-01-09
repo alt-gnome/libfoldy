@@ -67,7 +67,7 @@ namespace Foldy {
         set_folders (builder.end ());
     }
 
-    public static void create_folder (
+    public static string create_folder (
         string? folder_id,
         string folder_name = "Unnamed Folder",
         string[] apps = {},
@@ -83,6 +83,8 @@ namespace Foldy {
         Folder.set_folder_translate (fid, translate);
 
         sync ();
+
+        return fid;
     }
 
     public static bool folder_exists (string folder_id) {
