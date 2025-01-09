@@ -11,8 +11,8 @@ Release: alt1
 Summary: Library with fincs for simpler work with folder schema
 License: GPL-3.0-or-later
 Group: System/Libraries
-Url: https://github.com/alt-gnome/libfoldy.git
-Vcs: https://github.com/alt-gnome/libfoldy.git.git
+Url: https://github.com/alt-gnome/libfoldy
+Vcs: https://github.com/alt-gnome/libfoldy.git
 
 Source0: %name-%version.tar
 
