@@ -13,7 +13,7 @@ sources = [
 ]
 
 lib = shared_library(
-  lib_name,
+  versioned_name,
   sources,
   dependencies: dependencies,
   vala_header: header_name,
@@ -61,7 +61,7 @@ endif
 
 pkgconfig.generate(
   lib,
-  name: versioned_name,
+  name: versioned_lib_name,
   requires: dependencies,
   subdirs: [ versioned_name ],
   description: 'Functions for work with folders on GNOME',

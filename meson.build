@@ -9,16 +9,17 @@ project(
 api_version = '1'
 glib_min_version = '2.76'
 
-lib_name = 'foldy'
-project_name = meson.project_name()
+name = 'foldy'
+lib_name = meson.project_name()
 gir_name = 'Foldy'
 
-versioned_name = meson.project_name() + '-' + api_version
+versioned_name = name + '-' + api_version
+versioned_lib_name = lib_name + '-' + api_version
 versioned_gir_name = gir_name + '-' + api_version
 
-deps_name = versioned_name + '.deps'
-header_name = project_name + '.h'
-vapi_name = versioned_name + '.vapi'
+deps_name = versioned_lib_name + '.deps'
+header_name = versioned_lib_name + '.h'
+vapi_name = versioned_lib_name + '.vapi'
 gir_name = versioned_gir_name + '.gir'
 typelib_name = versioned_gir_name + '.typelib'
 
